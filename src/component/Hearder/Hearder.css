@@ -1,0 +1,63 @@
+.hearder {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 152px;
+  margin: 0 5rem;
+}
+.hearder__title {
+  font-size: 2.5rem;
+  color: white;
+  border-bottom-color:#3a3d4a ;
+    border-bottom-style: solid;
+    border-bottom-color: #3a3d4a;
+    border-bottom-style: solid;
+  &:hover {
+    border-bottom-color: white;
+    border-bottom-style: solid;
+    color: white;
+  }
+}
+.hearder__list {
+  display: flex;
+  list-style: none;
+}
+.hearder__item {
+}
+.header__item-title {
+  color: #a9adc1;
+  font-size: 1.8rem;
+  text-decoration: none;
+  padding: 8px 20px;
+  border-bottom-color: #3a3d4a;
+  border-bottom-style: solid;
+
+  &:hover {
+    border-bottom-color: white;
+    border-bottom-style: solid;
+    color: white;
+  }
+}
+
+.hearder__Right {
+  display: flex;
+}
+.icon__moon {
+  height: 56px;
+  width: 56px;
+  border: 1px solid #4b4c53;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+  &:hover{
+    border: 1px solid white;
+  }
+}
+.icon__login{
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+    transform: rotate(360deg);
+}
