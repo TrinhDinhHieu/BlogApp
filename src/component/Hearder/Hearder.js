@@ -14,7 +14,7 @@ function Hearder() {
     { name: "About", link: config.routes.about },
   ];
   return (
-    <hearder className="hearder">
+    <header className="hearder">
       <NavLink to={config.routes.home}>
       <h1 className="hearder__title">Kent C. Dodds</h1>
       </NavLink>
@@ -36,7 +36,7 @@ function Hearder() {
             
         </div>
       </div>
-    </hearder>
+    </header>
   );
 }
 

@@ -1,8 +1,38 @@
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faArrowDown, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import "./Home.css";
 import Hearderhome from "./position/HearderHome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Section from "./position/Section";
 function HomeComponent() {
+  const data = [
+    {
+      url: "https://res.cloudinary.com/kentcdodds-com/image/upload/w_1100,q_auto,f_auto,b_rgb:e6e9ee/unsplash/photo-1554672723-b208dc85134f",
+      time: "June 4th, 2019 — 14 min read",
+      content: "When to useMemo and useCallback"
+    },
+    {
+      url: "https://res.cloudinary.com/kentcdodds-com/image/upload/w_1100,q_auto,f_auto,b_rgb:e6e9ee/kentcdodds.com/content/blog/how-to-write-a-javascript-library/banner",
+      time: "September 8th, 2015 — 2 min read",
+      content: "How to Write a JavaScript Library"
+    },
+    {
+      url: "https://res.cloudinary.com/kentcdodds-com/image/upload/w_1100,q_auto,f_auto,b_rgb:e6e9ee/unsplash/photo-1523962389844-25940ebd2226",
+      time: "September 30th, 2019 — 13 min read",
+      content: "Don't Sync State. Derive It!"
+    }
+  ];
+  const dataBottom = [
+    {
+      url: "https://res.cloudinary.com/kentcdodds-com/image/upload/w_128,q_auto,f_auto/kentcdodds.com/pages/courses/rocket",
+      title: "Epic React",
+      text: " The most comprehensive guide for pros."
+    },
+    {
+      url: "https://res.cloudinary.com/kentcdodds-com/image/upload/w_128,q_auto,f_auto/kentcdodds.com/pages/courses/testing-trophy",
+      title: "Testing JavaScript",
+      text: "Learn smart, efficient testing methods."
+    }
+  ];
   return (
     <div className="wrapper">
       <Hearderhome />
@@ -90,22 +120,87 @@ function HomeComponent() {
                 </p>
               </div>
               <div className="btn_down">
-            <p className="title_down">Start reading the blog</p>
-            <p className="icon-down padding_right">
-              <FontAwesomeIcon
-                icon={faArrowRight}
-                style={{ color: "#ffffff" }}
-                className="icon"
-              />
-            </p>
-          </div>
+                <p className="title_down">Start reading the blog</p>
+                <p className="icon-down padding_right">
+                  <FontAwesomeIcon
+                    icon={faArrowRight}
+                    style={{ color: "#ffffff" }}
+                    className="icon"
+                  />
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </nav>
-        <div>
-          main
+      <div className="space_main"></div>
+      <div className="main_top">
+        <div className="main_top-title">
+          <h2 className="main_title-top">Blog recommendations</h2>
+          <p className="main_title-bottom">Prepared especially for you.</p>
         </div>
+        <div className="btn_down">
+          <p className="title_down">See the full blog</p>
+          <p className="icon-down padding_right">
+            <FontAwesomeIcon
+              icon={faArrowRight}
+              style={{ color: "#ffffff" }}
+              className="icon"
+            />
+          </p>
+        </div>
+      </div>
+      <div className="main_center">
+        <ul className="main_center-list">
+          {data.map((item, index) => (
+            <li key={index} className="main_list-item">
+              <img src={item.url} className="main_item-img" />
+              {/* ////// CHECK BUTTOn//// */}
+              <button>Click to copy url</button>
+              <p className="main_item-time">{item.time}</p>
+              <h3 className="main_item-text">{item.content}</h3>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="space"></div>
+      <div className="main_top">
+        <div className="main_top-title">
+          <h2 className="main_title-top">Are you ready to level up?</h2>
+          <p className="main_title-bottom">Checkout some of my courses</p>
+        </div>
+        <div className="btn_down">
+          <p className="title_down p_couse">See all courses</p>
+          <p className="icon-down padding_right">
+            <FontAwesomeIcon
+              icon={faArrowRight}
+              style={{ color: "#ffffff" }}
+              className="icon"
+            />
+          </p>
+        </div>
+      </div>
+      <div className="main_bottom">
+        {dataBottom.map((item, index) => (
+          <div className="main_dottom-item" key={index}>
+            <img className="icon_bottom" src={item.url} />
+            <div className="content_bottom">
+              <p className="main_title-top title_bottom">{item.title}</p>
+              <p className="text_bottom">{item.text}</p>
+              <buttom className="btn_bottom">
+                visit couse{" "}
+                <FontAwesomeIcon
+                  className="icon_down"
+                  icon={faArrowDown}
+                  style={{ color: "#000000" }}
+                />
+              </buttom>
+            </div>
+          </div>
+        ))}
+      </div>
+     <Section/>
+      
     </div>
   );
 }
